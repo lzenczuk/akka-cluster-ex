@@ -18,10 +18,21 @@ import scala.concurrent.duration._
   * Created by dev on 11/11/16.
   */
 
+// not used here. Based on MemberStatus, example of enum.
+sealed abstract class SomeState
+
+object SomeState{
+  case object Starting extends SomeState
+  case object Running extends SomeState
+  case object Stopping extends SomeState
+  case object Stoped extends SomeState
+}
 
 object NodeManagerActor {
 
   case class JoinCluster(systemName: String, host: String, port: Int)
+
+  case object LeaveCluster
 
   case object NodeStatusRequest
 
