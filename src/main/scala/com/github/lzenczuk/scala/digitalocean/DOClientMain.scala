@@ -14,6 +14,8 @@ object DOClientMain extends App{
 
   private val availableDroplets: Droplets = client.getAvailableDroplets(0, 10)
 
+  // Because of akka http scala version was changed from 2.12 to 2.11 but because 2.11 not support java 8 lambdas this code not compile any more
+  /*
   availableDroplets.getDroplets.forEach(droplet => {
     println(s"${droplet.getName}: ${droplet.getStatus}")
     droplet.getNetworks.getVersion4Networks.forEach(network => println(s"${network.getType} ${network.getIpAddress} ${network.getNetmask} ${network.getGateway}"))
@@ -21,5 +23,5 @@ object DOClientMain extends App{
 
   private val availableImages: Images = client.getAvailableImages(0, 10)
   availableImages.getImages.forEach(image => println(s"${image.getId} ${image.getName}"))
-
+  */
 }
